@@ -26,9 +26,13 @@ for dataset_name in datasets:
             
             for (observation, action, reward, term, trunc) in zip(episode.observations, episode.actions, episode.rewards, episode.terminations, episode.truncations):
                 f.write('(')
+                f.write('(')
                 f.write(' '.join(str(x) for x in observation))
+                f.write(')')
                 f.write(' ')
+                f.write('(')
                 f.write(' '.join(str(x) for x in action))
+                f.write(')')
                 f.write(' ')
                 f.write(str(reward))
                 f.write(" ")
